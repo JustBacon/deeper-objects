@@ -52,12 +52,12 @@ function returnEnable(stuff){
 			isEnabled += stuff[key]
 			// console.log(isEnabled);
 			// console.log(typeof isEnabled)
+			return isEnabled;
 		}
 	}
 	// console.log(stuff.enabled);
-	console.log(isEnabled);
 }
-returnEnable(preview);
+console.log(returnEnable(preview));
 /*
 * Function that changes the value from the key "enabled" to true, and returns 
 * the value from the key "enabled"
