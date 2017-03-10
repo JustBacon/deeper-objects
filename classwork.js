@@ -41,7 +41,7 @@ var preview = {
 
 function returnEnable(stuff){
 	// console.log(stuff);
-	var isEnabled = ''
+	var isEnabled = '';
 	for(var key in stuff){
 		// console.log(key);
 		// console.log(stuff[key]);
@@ -64,14 +64,42 @@ console.log(returnEnable(preview));
 *
 * Return 	value from key enabled (boolean)
 */
-
+console.log("\n")
+function changeEnable(stuff){
+	// console.log(stuff);
+	console.log(stuff.enabled);
+	stuff.enabled = true
+	return stuff.enabled
+}
+console.log(changeEnable(preview));
 /*
 * Function that retrieves the urls only from the key "resolutions" 
 * , stores the values in an array called "urls", and returns the created array
 * 
 * Return 	urls (array)
 */
-
+console.log("\n");
+function returnUrl(stuff){
+	// console.log(stuff);
+	for (var key in stuff){
+		// console.log(key);
+		if(key === "images"){
+			// console.log("INSIDE OF IMAGES");
+			for(var image in stuff[key]){
+				// console.log("\n")
+				// console.log(stuff[key][image]);
+				for(var imageValue in stuff[key][image]){
+					// console.log("\n")
+					// console.log(stuff[key][image][imageValue]);
+					if(imageValue === "resolutions"){
+						console.log(stuff[key][image][imageValue])
+					}
+				}
+			}
+		}
+	}
+}
+console.log(returnUrl(preview));
 /*
 * Function that retrieves the first nested key and value pairing
 * from the values of "images", stores them in a new object called 
